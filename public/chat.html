@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>Chat Start</title>
+    </head>
+    <body>
+        <h1>Chat</h1>
+        <div>
+            <ul>
+                <li><strong>Ali:</strong> Hello</li>
+            </ul>
+
+        </div>
+        <div>
+            <form>
+                <input type="text" name="msg">
+                <a href="javascript:;" onclick="sendMessage();">Add</a>
+            </form>
+        </div>
+        <script src="/socket.io/socket.io.js"></script>
+        <script>
+              var socket = io();
+              function sendMessage(){
+                socket.emit('msg',"Hello Buddy");
+                 // socket.emit('msg',document.elements.msg.value);
+              }
+        </script>
+    </body>
+</html>
